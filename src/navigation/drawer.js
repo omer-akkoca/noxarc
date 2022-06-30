@@ -6,7 +6,7 @@ import { BrowsePodcasts, Login, Podcast } from "../screens"
 
 const Stack = createNativeStackNavigator();
 
-const Navigator = () =>{
+const RenderMain = () =>{
     return(
         <NavigationContainer>
             <DrawerNavigation/>
@@ -16,7 +16,10 @@ const Navigator = () =>{
 
 const DrawerNavigation = () => {
     return(
-        <Stack.Navigator>
+        <Stack.Navigator
+            initialRouteName={screens.LOGIN}
+            screenOptions={{ header: () => null }}
+        >
             <Stack.Screen name={screens.LOGIN} component={Login} />
             <Stack.Screen name={screens.BROWSE_PODCASTS} component={BrowsePodcasts} />
             <Stack.Screen name={screens.PODCAST} component={Podcast} />
@@ -24,4 +27,4 @@ const DrawerNavigation = () => {
     )
 }
 
-export default Navigator;
+export default RenderMain;

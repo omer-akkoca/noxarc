@@ -3,5 +3,3 @@ export const screens = {
     BROWSE_PODCASTS: "browse",
     PODCAST: "podcast"
 }
-
-export { screens };
