@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "f82d6c24-63d8-4c98-b4ed-89d8164960d0",
+		"name": "Podcast API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@example.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/login",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/search",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "v",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "art",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "use_default_content",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Categories: [\"art\", \"business\", \"entertainment\", \"general\", \"health\", \"science\", \"sports\", \"technology\"]"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE2NDM4MDM4Nzh9.Xc1XunOeBVfVe1tCDnibOMHIjPKQL0l7qt49ypMNF3c",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://nox-podcast-api.vercel.app"
+		}
+	]
+}
