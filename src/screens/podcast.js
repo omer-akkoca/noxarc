@@ -50,6 +50,20 @@ const Podcast = ({ route }) =>{
         setIsPlaying(curr => !curr)
     }
 
+    const goBeginning = () => {
+        audio.setCurrentTime(0)
+        setSecond(0)
+        audio.play()
+        setIsPlaying(true)
+    }
+
+    const goEnd = () => {
+        audio.setCurrentTime(duration)
+        setSecond(duration)
+        audio.stop()
+        setIsPlaying(false)
+    }
+
     return(
         <TurnBackPage bgColor={"#19232F"}>
             <View style={styles.topContainer}>
@@ -62,15 +76,15 @@ const Podcast = ({ route }) =>{
                         style={styles.topContent}
                     >
                         <Text style={styles.topTitle}>{podcast?.title}</Text>
-                        <Text style={styles.author}>{podcast?.author} ---- {second}</Text>
+                        <Text style={styles.author}>{podcast?.author}</Text>
                         <View style={styles.actionsWrapper}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=> goBeginning()}>
                                 <Image source={backPodcast}/>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => playPause()}>
                                 <Image source={isPlaying ? pause : play}/>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => goEnd()}>
                                 <Image source={nextPodcast}/>
                             </TouchableOpacity>
                         </View>
