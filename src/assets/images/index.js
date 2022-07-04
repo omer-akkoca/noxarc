@@ -10,7 +10,19 @@ import podcasts from "./podcasts.png"
 import topics from "./topics.png"
 import time from "./time.png"
 import play from "./play.png"
-
+import podcastBg from "./podcastBg.png"
+import back from "./back.png"
+import sliderThumb from "./sliderThumb.png"
+import like from "./like.png"
+import unlike from "./unlike.png"
+import showEpisode from "./showEpisode.png"
+import showSize from "./showSize.png"
+import moreMenu from "./moreMenu.png"
+import backPodcast from "./backPodcast.png"
+import nextPodcast from "./nextPodcast.png"
+import pause from "./pause.png"
+import author1 from "./author1.png"
+import author2 from "./author2.png"
 
 export {
     loginBackground,
@@ -24,5 +36,18 @@ export {
     podcasts,
     topics,
     time,
-    play
+    play,
+    podcastBg,
+    back,
+    sliderThumb,
+    like,
+    unlike,
+    showEpisode,
+    showSize,
+    moreMenu,
+    backPodcast,
+    nextPodcast,
+    pause,
+    author1,
+    author2
 }

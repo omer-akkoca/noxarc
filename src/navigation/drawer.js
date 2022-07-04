@@ -1,30 +1,25 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native"
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { screens } from "../consts/screens";
-import { BrowsePodcasts, Login, Podcast } from "../screens"
+import React, { useEffect } from "react";
+import { View } from "react-native";
+import { useAtom } from "jotai";
+import { USER_SIGNED_IN } from "../utils/atom";
+import MainNav from "./main";
+import AuthNav from "./auth";
 
-const Stack = createNativeStackNavigator();
+const Router = () =>{
 
-const RenderMain = () =>{
+    const [userSignedIn] = useAtom(USER_SIGNED_IN)
+
+    useEffect(()=>{
+        // kayıtlı current token gonderıp ılk gırıste
+        // token expired olmusmu degılmıu kontrolu
+        // olmamıssa mainnava yonlendırelecek 
+    })
+
     return(
-        <NavigationContainer>
-            <DrawerNavigation/>
-        </NavigationContainer>
+        <View style={{ flex: 1 }}>
+            { userSignedIn ? <MainNav/> : <AuthNav/> }
+        </View>
     )
 }
 
-const DrawerNavigation = () => {
-    return(
-        <Stack.Navigator
-            initialRouteName={screens.LOGIN}
-            screenOptions={{ header: () => null }}
-        >
-            <Stack.Screen name={screens.LOGIN} component={Login} />
-            <Stack.Screen name={screens.BROWSE_PODCASTS} component={BrowsePodcasts} />
-            <Stack.Screen name={screens.PODCAST} component={Podcast} />
-        </Stack.Navigator>
-    )
-}
-
-export default RenderMain;
+export default Router;

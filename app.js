@@ -1,6 +1,6 @@
 import React from "react"
 import { StyleSheet, SafeAreaView } from "react-native"
-import Navigator from "./src/navigation/drawer"
+import Router from "./src/navigation/drawer"
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient()
@@ -9,7 +9,7 @@ const App = () =>{
     return(
         <QueryClientProvider client={queryClient}>
             <SafeAreaView style={styles.wrapper}>
-                <Navigator/>
+                <Router/>
             </SafeAreaView>
         </QueryClientProvider>
     )
